@@ -1,0 +1,367 @@
+/* Animations */
+@keyframes borderGlow {
+  0% {
+    border-color: #3498db; /* Light Blue Glow */
+    box-shadow: 0 0 5px #3498db, 0 0 10px rgba(52, 152, 219, 0.5);
+  }
+  25% {
+    border-color: #1abc9c; /* Transition to Light Green Glow */
+    box-shadow: 0 0 10px #1abc9c, 0 0 20px rgba(26, 188, 156, 0.5);
+  }
+  50% {
+    border-color: #1abc9c; /* Light Green Glow */
+    box-shadow: 0 0 15px #1abc9c, 0 0 30px rgba(26, 188, 156, 0.5);
+  }
+  75% {
+    border-color: #3498db; /* Transition back to Light Blue Glow */
+    box-shadow: 0 0 10px #3498db, 0 0 20px rgba(52, 152, 219, 0.5);
+  }
+  100% {
+    border-color: #3498db; /* Light Blue Glow */
+    box-shadow: 0 0 5px #3498db, 0 0 10px rgba(52, 152, 219, 0.5);
+  }
+}
+
+
+@keyframes cardAnimation {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.profile-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+/* Post Card */
+.post-card {
+  border-radius: 50px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.4s, box-shadow 0.4s, opacity 0.4s, background 0.5s ease;
+  animation: cardAnimation 1s ease-out, borderGlow 1.5s ease-in-out infinite;
+  width: 100%;
+  max-width: 350px;
+  margin: 10px auto;
+}
+
+/* Dark and Light Themes */
+.post-card-dark {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 100%);
+  color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid #3498db;
+}
+
+.post-card-light {
+  background: linear-gradient(135deg, rgba(202, 192, 192, 0.9) 0%, rgba(228, 217, 217, 0.7) 100%);
+  color: black;
+  box-shadow: 0 15px 30px rgba(245, 241, 241, 0.4);
+  border: 3px solid #3498db;
+}
+
+/* Hover Effects */
+/* Post Card Hover Effect */
+.post-card:hover {
+  transform: scale(1.1); /* Increased scale on hover for more emphasis */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover for more depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Theme Toggle Button - Positioned at Top Right */
+.post-card .theme-toggle-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for more depth */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.post-card .theme-toggle-btn-dark {
+  background-color: white;
+  color: #333;
+  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+}
+
+.post-card .theme-toggle-btn-light {
+  background-color: #333;
+  color: white;
+  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+}
+
+.post-card .theme-toggle-btn:hover {
+  transform: scale(1.2); /* Scales up on hover for emphasis */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 200px; /* Increased height for a more prominent display */
+  overflow: hidden;
+  border-radius: 50px; /* Increased border radius for a softer look */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); /* Enhanced shadow for more depth */
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-bottom: 25px; /* Increased margin for better spacing */
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.1), rgba(240, 240, 240, 0)); /* Gradient background for a more dynamic look */
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  border-radius: inherit; /* Inherit border radius from parent */
+}
+
+.image-container:hover .featured-image {
+  transform: scale(1.1); /* Increased scale on hover for more emphasis */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.image-container:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); /* Increased shadow on hover for more depth */
+  transform: scale(1.02); /* Scales up slightly on hover for emphasis */
+}
+
+/* Additional Effects */
+.post-card-dark .image-container {
+  background: linear-gradient(to bottom, rgba(58, 56, 56, 0.1), rgba(58, 56, 56, 0)); /* Gradient background for dark mode */
+}
+
+.post-card-light .image-container {
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.1), rgba(240, 240, 240, 0)); /* Gradient background for light mode */
+}
+
+
+/* Title Styling */
+.post-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* Increased font size for better visibility */
+  font-weight: 600; /* Increased font weight for more emphasis */
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Increased letter spacing for a more dramatic look */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)); /* Gradient background for a more dynamic look */
+  padding: 5px 10px; /* Increased padding for a more defined look */
+  border-radius: 10px; /* Rounded corners for a softer appearance */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for transform and box-shadow */
+}
+
+/* Dark and Light Title Styles */
+.post-card-dark .post-title {
+  color: #f1c40f; /* Bright yellow for dark mode */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+  background: linear-gradient(to bottom, rgba(58, 56, 56, 0.3), rgba(58, 56, 56, 0.1)); /* Gradient background for dark mode */
+}
+
+.post-card-light .post-title {
+  color: #333; /* Darker text in light mode */
+  text-shadow: 1px 1px 5px rgba(200, 200, 200, 0.5); /* Soft shadow for light mode */
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.3), rgba(240, 240, 240, 0.1)); /* Gradient background for light mode */
+}
+
+/* Hover Effect on Title */
+.post-card .post-title:hover {
+  transform: scale(1.05); /* Scales up slightly on hover for emphasis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increases shadow on hover */
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5); /* Increases shadow on hover */
+}
+
+
+/* Author Styling */
+.author {
+  font-size: 0.8rem; /* Increased font size for better visibility */
+  color: #f1c40f; /* Bright yellow for attention */
+  margin-bottom: 12px;
+  opacity: 1;
+  letter-spacing: 1px; /* Increased letter spacing for a more dramatic look */
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease; /* Transition for opacity and transform */
+  font-weight:400; /* Bold font for emphasis */
+  text-transform: uppercase; /* Uppercase for a more dramatic look */
+  font-style: italic;
+  font-weight: 800;
+}
+
+/* Light Mode Author Styling */
+.post-card-light .author {
+  color: #111111; /* Darker text for better contrast in light mode */
+  text-shadow: 1px 1px 3px rgba(200, 200, 200, 0.5); /* Soft shadow for light mode */
+  background: linear-gradient(to right, rgba(240, 240, 240, 0.2), rgba(240, 240, 240, 0)); /* Gradient background for light mode */
+  padding: 2px 5px; /* Adds a bit of padding for a more defined look */
+  border-radius: 5px; /* Rounded corners for a softer appearance */
+}
+
+/* Dark Mode Author Styling */
+.post-card-dark .author {
+  color: #f1c40f; /* Bright yellow for dark mode */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Darker shadow for dark mode */
+  background: linear-gradient(to right, rgba(58, 56, 56, 0.2), rgba(58, 56, 56, 0)); /* Gradient background for dark mode */
+  padding: 2px 5px; /* Adds a bit of padding for a more defined look */
+  border-radius: 5px; /* Rounded corners for a softer appearance */
+}
+
+/* Hover Effect on Author */
+.post-card .author:hover {
+  opacity: 0.8; /* Reduces opacity slightly on hover */
+  transform: scale(1.05); /* Scales up slightly on hover for emphasis */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Increases shadow on hover */
+}
+
+
+/* Content Styling */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  background: rgba(58, 56, 56, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  opacity: 1;
+  animation: fadeIn 1s ease-out;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  transition: transform 0.3s ease-in-out; /* Adds a transition effect */
+}
+
+.content:hover {
+  transform: scale(1.02); /* Scales up slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increases shadow on hover */
+}
+
+/* Light and Dark Content Colors */
+.post-card-dark .content {
+  color: #dcdcdc;
+  background: linear-gradient(to bottom, rgba(58, 56, 56, 0.3), rgba(58, 56, 56, 0.1)); /* Gradient background for dark mode */
+}
+
+.post-card-light .content {
+  color: #000000; /* Darker text for better contrast in light mode */
+  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.3), rgba(240, 240, 240, 0.1)); /* Gradient background for light mode */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Read More Link */
+.read-more {
+  font-size: 0.8rem; /* Increased font size for better visibility */
+  color: #f1c40f; /* Bright yellow for attention */
+  text-decoration: none; /* Remove underline for a cleaner look */
+  background-color: transparent; /* Transparent background */
+  border: 1px dashed #f1c40f; /* Dashed border for a unique look */
+  padding: 4px 8px; /* Adds padding to make it look more like a button */
+  cursor: pointer;
+  margin-top: 10px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transition for color, transform, and background */
+  opacity: 1;
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+  font-weight: bold; /* Bold font for emphasis */
+  border-radius: 50px; /* Rounded corners for a softer look */
+  
+}
+
+/* Light Mode Read More Link */
+.post-card-light .read-more {
+  color: #000; /* Darker text for better contrast in light mode */
+  border-color: #000; /* Changes border color in light mode */
+}
+
+/* Hover Effect on Read More */
+.post-card .read-more:hover {
+  color: #fff; /* White text on hover for contrast */
+  background-color: #0b3755; /* Blue background on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow on hover */
+}
+
+/* Active Effect on Read More */
+.post-card .read-more:active {
+  transform: scale(0.9); /* Scales down slightly on active for feedback */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inset shadow for pressed effect */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3; /* Increased z-index to ensure it's on top */
+  background-color: rgba(0, 0, 0, 0.7); /* Blackish background with transparency */
+  padding: 5px; /* Optional: Add some padding around the logo */
+  border-radius: 50%; /* Optional: Round the corners of the background */
+}
