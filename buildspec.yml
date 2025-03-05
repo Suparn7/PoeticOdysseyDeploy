@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22.14.0
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Starting the build process...
+      - npm run build
+artifacts:
+  files:
+    - '**/*'
+  base-directory: build 
