@@ -12,7 +12,7 @@ const initialState = {
     updatedAt: null,
     isVerified: false,
     isAdmin: false,
-    status: 'idle',  // 'idle' | 'loading' | 'succeeded' | 'failed'
+    status: 'idle',  
     error: null,
 }
 
