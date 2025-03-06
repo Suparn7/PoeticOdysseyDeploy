@@ -16,7 +16,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['buffer', 'process'], // Explicitly include these modules
+    include: ['buffer', 'process'], 
     esbuildOptions: {
       define: {
         global: 'globalThis',
