@@ -6,7 +6,7 @@ import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfil
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/PoeticOdyssey',
   resolve: {
     alias: {
       // Polyfills for Node.js core modules
