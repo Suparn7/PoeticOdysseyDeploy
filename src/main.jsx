@@ -31,6 +31,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     children: [
+      { path: '/', element: <Home /> },
       { path: '/PoeticOdyssey/', element: <Home /> },
       { path: '/PoeticOdyssey/login', element: <Protected authentication={false}><Login /></Protected> },
       { path: '/PoeticOdyssey/signup', element: <Protected authentication={false}><SignUp /></Protected> },
